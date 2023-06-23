@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Tank Level</title>
+  <meta http-equiv="refresh" content="5">
+  <style>
+    svg {
+      width: 300px;
+      height: 400px;
+      background-color: #f1f1f1;
+    }
+
+    #waterTank {
+      fill: none;
+      stroke: #000000;
+      stroke-width: 2px;
+    }
+
+    #waterLevel {
+      fill: #2196F3;
+    }
+
+    text {
+      fill: #333;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      text-anchor: middle;
+    }
+
+    #tankLabel {
+      font-size: 24px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+<body>
+  <svg>
+    <text x="150" y="20" dominant-baseline="hanging" text-anchor="middle" id="tankLabel">
+      Water Tank
+    </text>
+    <rect x="50" y="50" width="200" height="300" id="waterTank" />
+    <rect x="50" y="50" width="200" height="0" id="waterLevel" fill="#2196F3" />
+    <text x="150" y="380" dominant-baseline="middle" text-anchor="middle" fill="#333" font-size="24px" id="waterLevelText"></text>
+  </svg>
+
+  <script>
+    // Get the water level passed from Flask
+    const water_level = {{ water_level }};
+    // Change the water level dynamically (percentage between 0 and 100)
+    const setWaterLevel = (percentage) => {
+      const waterLevelRect = document.getElementById('waterLevel');
+      const waterLevelText = document.getElementById('waterLevelText');
+      const waterTankRect = document.getElementById('waterTank');
+      const tankLabel = document.getElementById('tankLabel');
+      const maxHeight = 300;
+      const height = (percentage / 100) * maxHeight;
+      const newY = 350 - height;
+      waterLevelRect.setAttribute('y', newY);
+      waterLevelRect.setAttribute('height', height);
+      waterLevelText.textContent = `${percentage}%`;
+      waterTankRect.setAttribute('height', maxHeight);
+      tankLabel.setAttribute('x', 150);
+    }
+
+    // Example: Set the water level to xx%
+   setWaterLevel(water_level);
+  </script>
+</body>
+</html>

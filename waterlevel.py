@@ -23,8 +23,8 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS wasser_level_14d (
 
 # Initialize the sensor board
 board = Board()
-dis_min = 0
-dis_max = 45000
+dis_min = 10
+dis_max = 2800
 board.set_dis_range(dis_min, dis_max)
 
 def measure_and_save_data():
@@ -33,13 +33,13 @@ def measure_and_save_data():
     cursor = conn.cursor()
     while True:
         start_time = time.time()  # Record the start time
-        # Measure the sensor value 10 times
+        # Measure the sensor value x times
         measurements = []
-        for _ in range(10):
+        for _ in range(12):
             # Code to measure the sensor value and append it to the list
             measurement = board.getDistance()
             measurements.append(measurement)
-            time.sleep(0.1)
+            time.sleep(0.7)
 
         # Calculate the median of the measurements
         median = statistics.median(measurements)
@@ -52,8 +52,8 @@ def measure_and_save_data():
         conn.commit()
 
         elapsed_time = time.time() - start_time
-        if elapsed_time < 5:
-            time.sleep(5 - elapsed_time)  # Wait for the remaining time to reach 5 seconds
+        if elapsed_time < 10:
+            time.sleep(10 - elapsed_time)  # Wait for the remaining time to reach 5 seconds
 
         start_time = time.time()  # Reset the start time for the next measurement cycle
 

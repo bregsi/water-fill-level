@@ -6,16 +6,18 @@ This project focuses on monitoring the fill level of an underground rainwater ta
 
 ## Hardware Setup
 - Raspberry Pi 3b+
-- A02YYUW Waterproof Ultrasonic Distance Sensor, DFRobot (https://www.dfrobot.com/product-1935.html?search=SEN0311&description=true)
+- A02YYUW Waterproof Ultrasonic Distance Sensor, DFRobot (https://www.dfrobot.com/product-1935.html?search=SEN0311&description=true) connected via UART
 
 ![Ultrasonic Sensor](https://github.com/DFRobot/DFRobot_RaspberryPi_A02YYUW/blob/master/resources/images/SEN0311.png)
 
+![Raspberry 3b+](https://github.com/bregsi/water-fill-level/blob/main/test-setup/rasp-3b.jpg)
+
 ## Software
 - `waterlevel.py`
-- 2 HTML template files, for usage with Flask
+- 2 very simple HTML template files, for usage with Flask
 
 ## Testing
-Final Setup idea which needs to be tested first:
+Setup idea which needed to be tested first (it does not work!!!):
 
 ![Final_Setup_Idea](https://github.com/bregsi/water-fill-level/blob/main/test-setup/fuellstandsmessung_with_values.png)
 
@@ -57,15 +59,20 @@ Results:
 ![Test02-3](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test02/water_level_plot20230624_17_10.png)
 
 With the current results, one can be satisfied before proceeding with the installation in the underground water tank.
-To ensure accuracy, this test was repeated with a slight modification. Measurements were taken every 0.7 seconds, 11 times, and the median value was calculated for Test 03 and 04. Measurments repeated every 10 seconds.
+To ensure accuracy, this test was repeated with a slight modification. Measurements were taken every 0.7 seconds, 11 times, and the median value was calculated for Test 03 and 04. Measurment-sets repeated every 10 seconds.
 
 Results Test 03
+
 ![Test03-1](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test03/water_level_plot20230627-test03.png)
 
 Results Test 04
 
 ![Test04-2](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test04/water_level_plot_20230627-test04-A.png)
 ![Test04-1](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test04/water_level_plot20230627-test04.png)
+
+## Results
+
+Based on these results, one can be satisfied with the modification as it seems to work well with a barrel of 35 cm in diameter. Therefore, it can be assumed that it will also work with the larger underground water tank. However, it is still necessary to assess the duration of sound reverberation within the tank. Thus, a subsequent live test is unavoidable to gather further information.
 
 
 

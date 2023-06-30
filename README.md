@@ -17,6 +17,12 @@ This project focuses on monitoring the fill level of an underground rainwater ta
 - 2 very simple HTML template files, for usage with Flask
 - DFRobot_RaspberryPi_A02YYUW.py (slightly edited Sensor Library from manfacturer))
 
+  index.html
+  ![index.html](https://github.com/bregsi/water-fill-level/blob/main/test-setup/index.html.jpg)
+  
+  recap.html
+  ![recap.html](https://github.com/bregsi/water-fill-level/blob/main/test-setup/recap.html.jpg)
+
 ## Testing
 Setup idea which needed to be tested first (it does not work!!!):
 

@@ -35,6 +35,12 @@
   </style>
 </head>
 <body>
+  <!-- Menu bar -->
+  <div class="menu">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('recap') }}">Recap</a>
+  </div>
+  
   <svg>
     <text x="150" y="20" dominant-baseline="hanging" text-anchor="middle" id="tankLabel">
       Water Tank
@@ -47,6 +53,8 @@
   <script>
     // Get the water level passed from Flask
     const water_level = {{ water_level }};
+    // Get the distance measurend
+    const water_distance = {{ water_distance }};
     // Change the water level dynamically (percentage between 0 and 100)
     const setWaterLevel = (percentage) => {
       const waterLevelRect = document.getElementById('waterLevel');
@@ -58,7 +66,7 @@
       const newY = 350 - height;
       waterLevelRect.setAttribute('y', newY);
       waterLevelRect.setAttribute('height', height);
-      waterLevelText.textContent = `${percentage}%`;
+      waterLevelText.textContent = `${percentage}% (${water_distance} mm)`;
       waterTankRect.setAttribute('height', maxHeight);
       tankLabel.setAttribute('x', 150);
     }

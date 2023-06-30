@@ -1,3 +1,6 @@
+# Python Script for Ultrasonic Range finder and Raspberry Pie
+
+# Libraries
 from flask import Flask, render_template
 from DFRobot_RaspberryPi_A02YYUW import DFRobot_A02_Distance as Board
 import statistics
@@ -33,9 +36,9 @@ def measure_and_save_data():
     cursor = conn.cursor()
     while True:
         start_time = time.time()  # Record the start time
-        # Measure the sensor value x times
+        # Measure the sensor value 11 times
         measurements = []
-        for _ in range(12):
+        for _ in range(11):
             # Code to measure the sensor value and append it to the list
             measurement = board.getDistance()
             measurements.append(measurement)
@@ -95,14 +98,16 @@ def plot_water_level():
     # Save the plot as a PNG file
     #plt.savefig(plot_filename)
     # Save the plot as a PNG file
+    # Save the plot as a PNG file
     plot_filename = 'water_level_plot.png'
-    plot_filepath = os.path.join(os.path.dirname(__file__), plot_filename)
+    plot_filepath = os.path.join(os.path.dirname(__file__), 'static', plot_filename)
     plt.savefig(plot_filepath)
     # Close the SQLite connection
     conn.close()
-
+    print(plot_filepath)
     return plot_filepath
 
+# FLASK
 @app.route('/')
 def index():
     # Connect to the SQLite database
@@ -113,7 +118,7 @@ def index():
     result = cursor.fetchone()
     if result:
         distance = result[0]
-        percent = round((600 - distance) / 6, 2)
+        percent = round((600 - distance) / 6, 1)
         if percent > 100:
             percent = 100
         elif percent < 0:

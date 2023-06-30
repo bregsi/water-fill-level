@@ -15,6 +15,7 @@ This project focuses on monitoring the fill level of an underground rainwater ta
 ## Software
 - `waterlevel.py`
 - 2 very simple HTML template files, for usage with Flask
+- DFRobot_RaspberryPi_A02YYUW.py (slightly edited Sensor Library from manfacturer))
 
 ## Testing
 Setup idea which needed to be tested first (it does not work!!!):
@@ -73,14 +74,3 @@ Results Test 04
 ## Results
 
 Based on these results, one can be satisfied with the modification as it seems to work well with a barrel of 35 cm in diameter. Therefore, it can be assumed that it will also work with the larger underground water tank. However, it is still necessary to assess the duration of sound reverberation within the tank. Thus, a subsequent live test is unavoidable to gather further information.
-
-
-
-
-
-
-
-
-
-
-

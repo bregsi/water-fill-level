@@ -4,10 +4,10 @@
     <title>14-Day Recap</title>
 </head>
 <body>
-    <h1>14-Day Recap</h1>
-    <h1>Recap Page</h1>
-    <p>Welcome to the recap page!</p>
-    <a href="{{ url_for('index') }}">Go to Index Page</a>
-    <img src="{{ url_for('static', filename=plot_filepath) }}" alt="Water Level Plot">
+    <div class="menu">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('recap') }}">Recap</a>
+  </div>
+    <img src="static/water_level_plot.png" alt="Water Level Plot">
 </body>
 </html>

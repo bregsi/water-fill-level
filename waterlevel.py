@@ -1,4 +1,4 @@
-# Python Script for Ultrasonic Range finder and Raspberry Pie
+# Python Script for Ultrasonic Range Finder and Raspberry Pi
 
 # Libraries
 from flask import Flask, render_template
@@ -96,9 +96,6 @@ def plot_water_level():
     plt.tight_layout()
 
     # Save the plot as a PNG file
-    #plt.savefig(plot_filename)
-    # Save the plot as a PNG file
-    # Save the plot as a PNG file
     plot_filename = 'water_level_plot.png'
     plot_filepath = os.path.join(os.path.dirname(__file__), 'static', plot_filename)
     plt.savefig(plot_filepath)
@@ -129,7 +126,6 @@ def index():
 @app.route('/recap')
 def recap():
     # Generate the water level plot and get the filename
-   # plot_filename = plot_water_level()
     plot_filepath = plot_water_level()
     return render_template('recap.html', plot_filepath=plot_filepath)
 

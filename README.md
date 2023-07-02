@@ -65,8 +65,7 @@ Results:
 ![Test02-2](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test02/water_level_plot20230624_17_01.png)
 ![Test02-3](https://github.com/bregsi/water-fill-level/blob/main/test-setup/Test02/water_level_plot20230624_17_10.png)
 
-With the current results, one can be satisfied before proceeding with the installation in the underground water tank.
-To ensure accuracy, this test was repeated with a slight modification. Measurements were taken every 0.7 seconds, 11 times, and the median value was calculated for Test 03 and 04. Measurment-sets repeated every 10 seconds.
+Based on the current results, one can be satisfied before proceeding with the installation in the underground water tank. To ensure accuracy, the test was repeated with a slight modification. Measurements were taken every 0.7 seconds, 11 times, and the median value was calculated for each set of measurements in Test 03 and Test 04. These measurement sets were then repeated every 10 seconds to gather the additional data.
 
 Results Test 03
 
